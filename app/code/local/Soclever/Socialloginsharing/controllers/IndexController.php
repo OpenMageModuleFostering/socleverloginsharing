@@ -520,7 +520,7 @@ if(isset($_GET['lc']) && $_GET['lc']!='')
  
  if(empty($code)) {
         $dialog_url = "http://www.facebook.com/dialog/oauth?client_id=" 
-            . $app_id . "&redirect_uri=" . urlencode($my_url)."&scope=email,user_birthday,user_relationships,user_location,user_hometown,user_friends,user_likes";
+            . $app_id . "&redirect_uri=" . urlencode($my_url)."&scope=email,user_birthday,user_relationships,user_location,user_hometown,user_friends,user_likes&display=popup";
 
         echo("<script>top.location.href='".$dialog_url."'</script>");
     }
