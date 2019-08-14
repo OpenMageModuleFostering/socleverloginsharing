@@ -40,6 +40,7 @@ class Soclever_Socialloginsharing_Model_Providers
             array('value'=>4, 'label'=>'Google+'),
             array('value'=>7, 'label'=>'LinkedIN'),            
             array('value'=>15, 'label'=>'Yahoo!'),
+            array('value'=>13, 'label'=>'Twitter'),
             array('value'=>16, 'label'=>'Paypal'),
             array('value'=>8, 'label'=>'Microsoft'),                       
         );
