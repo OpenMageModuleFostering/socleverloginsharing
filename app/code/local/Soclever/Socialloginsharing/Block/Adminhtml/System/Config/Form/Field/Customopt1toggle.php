@@ -60,6 +60,22 @@ class Soclever_Socialloginsharing_Block_Adminhtml_System_Config_Form_Field_Custo
                         document.getElementById('row_socialloginsharing_options_displaysettingshare_yourstyletw').hide();
                         document.getElementById('row_socialloginsharing_options_displaysettingshare_yourstyletm').hide();
                     }
+                    enabledlogin=document.getElementById('socialloginsharing_options_displaysettings_buttonstyle').value;
+                    if (enabledlogin=='custom') {
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstylefb').show();
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstylegp').show();                        
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstyleli').show();                        
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstyletw').show();
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstyleyh').show();
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstylepp').show();
+                    } else {
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstylefb').hide();
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstylegp').hide();                        
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstyleli').hide();                        
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstyletw').hide();
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstyleyh').hide();
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstylepp').hide();
+                    }
                 });
                 Event.observe('socialloginsharing_options_displaysettingshare_yourstyle', 'change', function(){
                     enabled=document.getElementById('socialloginsharing_options_displaysettingshare_yourstyle').value;                    
@@ -83,6 +99,24 @@ class Soclever_Socialloginsharing_Block_Adminhtml_System_Config_Form_Field_Custo
                         document.getElementById('row_socialloginsharing_options_displaysettingshare_yourstylerd').hide();
                         document.getElementById('row_socialloginsharing_options_displaysettingshare_yourstyletw').hide();
                         document.getElementById('row_socialloginsharing_options_displaysettingshare_yourstyletm').hide();
+                    }
+                });
+                Event.observe('socialloginsharing_options_displaysettings_buttonstyle', 'change', function(){
+                    enabledlogin=document.getElementById('socialloginsharing_options_displaysettings_buttonstyle').value;                    
+                    if (enabledlogin=='custom') {
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstylefb').show();
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstylegp').show();                        
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstyleli').show();                        
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstyletw').show();
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstyleyh').show();
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstylepp').show();
+                    } else {
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstylefb').hide();
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstylegp').hide();                        
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstyleli').hide();                        
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstyletw').hide();
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstyleyh').hide();
+                        document.getElementById('row_socialloginsharing_options_displaysettings_buttonstylepp').hide();
                     }
                 });
             </script>";

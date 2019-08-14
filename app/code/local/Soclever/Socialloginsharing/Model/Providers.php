@@ -4,7 +4,7 @@ class Soclever_Socialloginsharing_Model_Providers
 {
     public function getbuttonstyles()
     {
-        $buttonstylesarray=array("ic"=>"Icons","fc"=>"Full Logos - Colored","fg"=>"Full Logos - Grey");       
+        $buttonstylesarray=array("ic"=>"Icons","fc"=>"Full Logos - Colored","fg"=>"Full Logos - Grey","custom"=>"Custom");       
         return $buttonstylesarray;
         
     }

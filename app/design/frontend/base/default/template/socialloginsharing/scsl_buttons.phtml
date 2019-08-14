@@ -14,6 +14,105 @@ $selected_providers=Mage::getStoreConfig('socialloginsharing_options/displaysett
           if($is_validated=='1' && $selected_providers!='' && $selected_providers!='0')
           {
            
+           if(strtolower($btn_style)=='custom')
+          {
+            
+            
+            $provider_arr=explode(",",$selected_providers);
+            $fbpath=Mage::getStoreConfig('socialloginsharing_options/displaysettings/buttonstylefb');
+            $gppath=Mage::getStoreConfig('socialloginsharing_options/displaysettings/buttonstylegp');
+            $lipath=Mage::getStoreConfig('socialloginsharing_options/displaysettings/buttonstyleli');
+            $twpath=Mage::getStoreConfig('socialloginsharing_options/displaysettings/buttonstyletw');
+            $yhpath=Mage::getStoreConfig('socialloginsharing_options/displaysettings/buttonstyleyh');
+            $pppath=Mage::getStoreConfig('socialloginsharing_options/displaysettings/buttonstylepp');
+            $gapi=file_get_contents('https://www.socleversocial.com/dashboard/get_fb_data.php?action=gapi&siteid='.$site_id.''); 
+            if(in_array('2',$provider_arr) && !empty($fbpath))
+            {
+                $bg_position=$btn_width;
+                $fb_div .='<script type="text/javascript">';
+                $imgdiv='<div style="float: left; margin-right: 10px;margin-top: 10px;"><img src="'.$fbpath.'" alt="Login with Facebook" title="Login with Facebook""></div>';
+                $fb_div .='csbutton.init([\''.$imgdiv.'\',\'100%\' ,\'100%\',\'login_fb\']);'.PHP_EOL;
+                $fb_div .='csbutton.putCsbutton();         
+                          </script>';
+                    
+            }
+            $gp_div="";
+            if(in_array('4',$provider_arr) && !empty($gppath))
+            {
+                
+                $gp_div .='<script type="text/javascript">';
+                $imgdiv='<div style="float: left; margin-right: 10px;margin-top: 10px;"><img src="'.$gppath.'" alt="Login with Google+" title="Login with Google+""></div>';
+                $gp_div .='csbutton.init([\''.$imgdiv.'\',\'100%\' ,\'100%\',\'login\',\''.$gapi.'\']);'.PHP_EOL;
+                $gp_div .='csbutton.putCsbutton();         
+                          </script>';
+                    
+            }
+            
+            $li_div="";
+            if(!empty($lipath) && in_array('7',$provider_arr))
+            {
+                
+                $li_div .='<script type="text/javascript">';
+                $imgdiv='<div style="float: left; margin-right: 10px;margin-top: 10px;"><img src="'.$lipath.'" alt="Login with LinkedIN" title="Login with LinkedIN""></div>';
+                $li_div .='csbutton.init([\''.$imgdiv.'\',\'100%\' ,\'100%\',\'login\',\'li\']);'.PHP_EOL;
+                $li_div .='csbutton.putCsbutton();         
+                          </script>';
+                
+            }
+            
+            $tw_div="";
+            if(!empty($twpath) && in_array('13',$provider_arr))
+            {
+                
+                $tw_div .='<script type="text/javascript">';
+                $imgdiv='<div style="float: left; margin-right: 10px;margin-top: 10px;"><img src="'.$twpath.'" alt="Login with Twitter" title="Login with Twitter""></div>';
+                $tw_div .='csbutton.init([\''.$imgdiv.'\',\'100%\' ,\'100%\',\'login\',\'twitter\']);'.PHP_EOL;
+                $tw_div .='csbutton.putCsbutton();         
+                          </script>';
+              
+            }
+            
+            $yh_div="";
+            if(!empty($yhpath) && in_array('15',$provider_arr))
+            {
+                
+                $yh_div .='<script type="text/javascript">';
+                $imgdiv='<div style="float: left; margin-right: 10px;margin-top: 10px;"><img src="'.$yhpath.'" alt="Login with Yahoo!" title="Login with Yahoo!""></div>';
+                $yh_div .='csbutton.init([\''.$imgdiv.'\',\'100%\' ,\'100%\',\'login\',\'yahoo\']);'.PHP_EOL;
+                $yh_div .='csbutton.putCsbutton();         
+                          </script>';
+              
+            }
+            $pp_div="";
+            if(!empty($pppath) && in_array('16',$provider_arr))
+            {
+                 
+                $pp_div .='<script type="text/javascript">';
+                $imgdiv='<div style="float: left; margin-right: 10px;margin-top: 10px;"><img src="'.$pppath.'" alt="Login with PayPal" title="Login with PayPal""></div>';
+                $pp_div .='csbutton.init([\''.$imgdiv.'\',\'100%\' ,\'100%\',\'login\',\'paypal\']);'.PHP_EOL;
+                $pp_div .='csbutton.putCsbutton();         
+                          </script>';
+              
+            }
+            
+            $imgdiv='<script type="text/javascript" src="https://www.socleversocial.com/dashboard/client_share_js/csloginbuttonscombine_'.$site_id.'.js"></script>'.PHP_EOL.$fb_div.PHP_EOL.$gp_div.PHP_EOL.$li_div.PHP_EOL.$tw_div.PHP_EOL.$yh_div.PHP_EOL.$ig_div.PHP_EOL.$pp_div;
+
+
+            
+          
+                $display_buttons='<div  style="margin-bottom:20px;width:52%;margin-bottom:10px;border:0px solid #bbb6a5;clear:both;overflow:hidden;height:1%;"><div><b>'.$loginboxcaption.'</b></div>'.$imgdiv.'';
+                if($showpoweredby=='1')
+                     {
+                        $display_buttons .='<div style="clear: both;text-align:left;padding-top:10px;"><b>Powered by </b><a href="https://www.socleversocial.com/" target="_blank">Socleversocial.com</a></div>';
+                     }
+                $display_buttons .='</div>';
+                echo $display_buttons;
+
+            
+            
+           }
+           else
+           {
           $valid_data=file_get_contents("https://www.socleversocial.com/dashboard/mage_login_buttons.php?site_id=".$site_id."&api_key=".$api_key."&api_secret=".$api_secret."&csplatform=magentologin&rt=gp&bcaption=".base64_encode($loginboxcaption)."&bshow=".$showpoweredby."&bstyle=".$btn_style."&bsize=".$button_size."&providers=".$selected_providers);
           
           if($valid_data && $valid_data!='0~~0')
@@ -26,6 +125,7 @@ $selected_providers=Mage::getStoreConfig('socialloginsharing_options/displaysett
          }
          }
          echo"";
+         }
  
  
             
