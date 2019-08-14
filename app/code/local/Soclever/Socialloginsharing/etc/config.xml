@@ -16,7 +16,7 @@
 <config>
 <modules>
         <Soclever_Socialloginsharing>
-            <version>1.1.1</version>
+            <version>1.2.3</version>
         </Soclever_Socialloginsharing>
     </modules>
 <default>

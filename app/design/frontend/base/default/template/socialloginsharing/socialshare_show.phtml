@@ -74,7 +74,8 @@ $newUrl = substr_replace($url,"$separator$name=$value",$insertPosition,0);
 
 
       $iwidth=explode("x",Mage::getStoreConfig('socialloginsharing_options/displaysettingshare/iconsize'));
-      $mobilefriendly=Mage::getStoreConfig('socialloginsharing_options/displaysettings/mobilefriendly');
+      $mobilefriendly=Mage::getStoreConfig('socialloginsharing_options/displaysettingshare/mobilefriendly');
+
       $button_style=Mage::getStoreConfig('socialloginsharing_options/displaysettingshare/yourstyle');      
       $gap=Mage::getStoreConfig('socialloginsharing_options/displaysettingshare/gapsetting');
       $counter_type=Mage::getStoreConfig('socialloginsharing_options/displaysettingshare/countersetting');
@@ -362,15 +363,15 @@ $newUrl = substr_replace($url,"$separator$name=$value",$insertPosition,0);
     }
     
     
-    $share_arr[2]='<span style="float:left;">'.$count2.'<img '.$src_style2.' onclick="share_on_cs(\'1\',\''.$user_ID.'\');cspopupCenterMagento(\'http://www.facebook.com/sharer.php?u='.urlencode(cs_format_share_url($url,'1')).'&t='.urlencode($title).'\',\'Share on Facebook\',\'600\',\'400\');"  alt="Share on Facebook"  ></span>'.$count2r.''.$gap_string.'';         
-    $share_arr[4]='<span style=\'float:left;\'>'.$count4.'<img  '.$src_style4.' onclick="share_on_cs(\'3\',\''.$user_ID.'\');cspopupCenterMagento(\'https://plus.google.com/share?url='.urlencode(cs_format_share_url($url,'3')).'&title='.urlencode($title).'\',\'Share on Google\',\'600\',\'400\');"   alt="Share on Google+"></span>'.$count4r.''.$gap_string.'';        
-    $share_arr[7]='<span style=\'float:left;\'>'.$count7.'<img '.$src_style7.' onclick="share_on_cs(\'2\',\''.$user_ID.'\');cspopupCenterMagento(\'https://www.linkedin.com/cws/share?url='.urlencode(cs_format_share_url($url,'2')).'&title='.urlencode($title).'\',\'Share on LinkedIN\',\'600\',\'400\');" alt="Share on LinkedIN" ></span>'.$count7r.''.$gap_string.'';        
-    $share_arr[13]='<span style=\'float:left;\'>'.$count13.'<img  '.$src_style13.' onclick="share_on_cs(\'4\',\''.$user_ID.'\');cspopupCenterMagento(\'http://twitter.com/share?url='.urlencode(cs_format_share_url($url,'4')).'&text='.urlencode($title).'\',\'Share on Twitter\',\'600\',\'400\');"  alt="Share on Twitter"></span>'.$count13r.''.$gap_string.'';
-    $share_arr[17]='<span style=\'float:left;\'>'.$count17.'<img  '.$src_style17.' onclick="share_on_cs(\'5\',\''.$user_ID.'\');"   alt="Pin It"></span>'.$count17r.''.$gap_string.'';
-    $share_arr[18]='<span style=\'float:left;\'>'.$count18.'<img  '.$src_style18.' onclick="share_on_cs(\'6\',\''.$user_ID.'\');"   alt="Share on Whatsapp"></span>'.$count18r.''.$gap_string.'';
-    $share_arr[19]='<span style=\'float:left;\'>'.$count19.'<img  '.$src_style19.' onclick="share_on_cs(\'7\',\''.$user_ID.'\');cspopupCenterMagento(\'http://www.stumbleupon.com/submit?url='.urlencode(cs_format_share_url($url,'7')).'&title='.urlencode($title).'\',\'Share on StumbleUpon\',\'600\',\'400\');""   alt="Share on StumbleUpon"></span>'.$count19r.''.$gap_string.'';
-    $share_arr[20]='<span style=\'float:left;\'>'.$count20.'<img  '.$src_style20.' onclick="share_on_cs(\'8\',\''.$user_ID.'\');cspopupCenterMagento(\'http://www.reddit.com/submit?url='.urlencode(cs_format_share_url($url,'8')).'&title='.urlencode($title).'\',\'Share on Reddit\',\'600\',\'400\');""   alt="Share on Reddit"></span>'.$count20r.''.$gap_string.'';
-    $share_arr[21]='<span style=\'float:left;\'>'.$count21.'<img  '.$src_style21.' onclick="share_on_cs(\'9\',\''.$user_ID.'\');cspopupCenterMagento(\'http://www.tumblr.com/share/link?url='.urlencode(cs_format_share_url($url,'9')).'&name='.urlencode($title).'\',\'Share on Tumblr\',\'600\',\'400\');""   alt="Share on Tumblr"></span>'.$count21r.''.$gap_string.'';
+    $share_arr[2]='<span style="'.$ic_div.'">'.$count2.'<img '.$src_style2.' onclick="share_on_cs(\'1\',\''.$user_ID.'\');cspopupCenterMagento(\'http://www.facebook.com/sharer.php?u='.urlencode(cs_format_share_url($url,'1')).'&t='.urlencode($title).'\',\'Share on Facebook\',\'600\',\'400\');"  alt="Share on Facebook"  ></span>'.$count2r.''.$gap_string.'';         
+    $share_arr[4]='<span style=\''.$ic_div.'\'>'.$count4.'<img  '.$src_style4.' onclick="share_on_cs(\'3\',\''.$user_ID.'\');cspopupCenterMagento(\'https://plus.google.com/share?url='.urlencode(cs_format_share_url($url,'3')).'&title='.urlencode($title).'\',\'Share on Google\',\'600\',\'400\');"   alt="Share on Google+"></span>'.$count4r.''.$gap_string.'';        
+    $share_arr[7]='<span style=\''.$ic_div.'\'>'.$count7.'<img '.$src_style7.' onclick="share_on_cs(\'2\',\''.$user_ID.'\');cspopupCenterMagento(\'https://www.linkedin.com/cws/share?url='.urlencode(cs_format_share_url($url,'2')).'&title='.urlencode($title).'\',\'Share on LinkedIN\',\'600\',\'400\');" alt="Share on LinkedIN" ></span>'.$count7r.''.$gap_string.'';        
+    $share_arr[13]='<span style=\''.$ic_div.'\'>'.$count13.'<img  '.$src_style13.' onclick="share_on_cs(\'4\',\''.$user_ID.'\');cspopupCenterMagento(\'http://twitter.com/share?url='.urlencode(cs_format_share_url($url,'4')).'&text='.urlencode($title).'\',\'Share on Twitter\',\'600\',\'400\');"  alt="Share on Twitter"></span>'.$count13r.''.$gap_string.'';
+    $share_arr[17]='<span style=\''.$ic_div.'\'>'.$count17.'<img  '.$src_style17.' onclick="share_on_cs(\'5\',\''.$user_ID.'\');"   alt="Pin It"></span>'.$count17r.''.$gap_string.'';
+    $share_arr[18]='<span style=\''.$ic_div.'\'>'.$count18.'<img  '.$src_style18.' onclick="share_on_cs(\'6\',\''.$user_ID.'\');"   alt="Share on Whatsapp"></span>'.$count18r.''.$gap_string.'';
+    $share_arr[19]='<span style=\''.$ic_div.'\'>'.$count19.'<img  '.$src_style19.' onclick="share_on_cs(\'7\',\''.$user_ID.'\');cspopupCenterMagento(\'http://www.stumbleupon.com/submit?url='.urlencode(cs_format_share_url($url,'7')).'&title='.urlencode($title).'\',\'Share on StumbleUpon\',\'600\',\'400\');""   alt="Share on StumbleUpon"></span>'.$count19r.''.$gap_string.'';
+    $share_arr[20]='<span style=\''.$ic_div.'\'>'.$count20.'<img  '.$src_style20.' onclick="share_on_cs(\'8\',\''.$user_ID.'\');cspopupCenterMagento(\'http://www.reddit.com/submit?url='.urlencode(cs_format_share_url($url,'8')).'&title='.urlencode($title).'\',\'Share on Reddit\',\'600\',\'400\');""   alt="Share on Reddit"></span>'.$count20r.''.$gap_string.'';
+    $share_arr[21]='<span style=\''.$ic_div.'\'>'.$count21.'<img  '.$src_style21.' onclick="share_on_cs(\'9\',\''.$user_ID.'\');cspopupCenterMagento(\'http://www.tumblr.com/share/link?url='.urlencode(cs_format_share_url($url,'9')).'&name='.urlencode($title).'\',\'Share on Tumblr\',\'600\',\'400\');""   alt="Share on Tumblr"></span>'.$count21r.''.$gap_string.'';
 
     
     $start_div='<div id="scssdiv" style="clear:both;wdth:100%;height:100%;display:inline-block;z-index:999;">';
@@ -385,9 +386,11 @@ if($display_style=='1' || $display_style=='2' )
     $end_div='</div>';
 }
 
-    if($mobilefriendly=='1' && scs_is_mobile())
+if($mobilefriendly=='1' && scs_is_mobile())
 {
-    $start_div='<div id="scssdiv" style="width: 90%;position:fixed;bottom:0;height: 40px; background-color:transparent;z-index:999;text-align:center;margin:0 auto;">';
+ 
+ $start_div='<div id="scssdiv" style="width: 90%;position:fixed;left:10%;bottom:1%;height: 40px; background-color:transparent;z-index:999;text-align:center;margin:0 auto;">';
+    
 }
 
     $js_code .=    PHP_EOL;
@@ -408,9 +411,14 @@ if($display_style=='1' || $display_style=='2' )
                         } 
         </script>'.PHP_EOL;
         
-        $js_code .='<style>#scssdiv img { display:inline !important; }</style>';
-	     	
-	 
+        $js_code .='<style>#scssdiv img { display:inline !important; }';
+        if($mobilefriendly=='1' && scs_is_mobile())
+        {
+	           $js_code .=    PHP_EOL;
+               $js_code .='#scssdiv span { margin-right:15px !important;}';
+               $js_code .=    PHP_EOL;
+        } 	
+	    $js_code.='</style>';
         echo $js_code;
         
 }

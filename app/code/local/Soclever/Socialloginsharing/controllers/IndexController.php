@@ -1,7 +1,4 @@
 <?php
-ini_set("display_errors","1");
-error_reporting(E_ALL);
-
 class Soclever_Socialloginsharing_IndexController extends Mage_Core_Controller_Front_Action
 {
     public function indexAction()
@@ -83,7 +80,7 @@ $client = new oauth_client_class;
     }
     if($client->exit)
     {
-        exit('82');
+        exit('Twitter Login Failed');
     }    
     if($success)
     {
@@ -556,6 +553,7 @@ if(isset($_GET['lc']) && $_GET['lc']!='')
     curl_close($ch);
 	$fbuser_old = $temp_user;	
 	$fbuser=json_decode($fbuser_old);
+
    
     if($fbuser_old && $fbuser->email!="")
 	{
@@ -736,7 +734,7 @@ try
 {
    
     
-    $openid = new LightOpenID('eurekadigital.com.au');
+    $openid = new LightOpenID($_SERVER['HTTP_HOST']);
      
     
     if(!$openid->mode)
@@ -752,9 +750,15 @@ try
             $openid->required = array('contact/email','person/guid','dob','birthDate','namePerson' , 'person/gender' , 'pref/language' , 'media/image/default','birthDate/birthday');
              
             //start discovery
+            ?>
+         <script type="text/javascript">
+            window.location.href="<?php echo $openid->authUrl(); ?>";
+            </script>
+
+           <?php
+       exit;
             
-            
-            header('Location: ' . $openid->authUrl());
+            //header('Location: ' . $openid->authUrl());
         }
         
          
