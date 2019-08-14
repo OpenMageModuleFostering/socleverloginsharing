@@ -97,8 +97,30 @@ if($display_style=='1' || $display_style=='2')
         $mobile_Display="display:inline-block;";
         $comon_counter_start_18='<div class="arrow_box"><div style="color:#000;font-weight:bold;position: relative;width: 100%;text-align: center;'.$counter_top_margin.'">';
     }    
-    
-        if($button_style=='1')
+    if($button_style=='custom')
+        {
+            
+            $fb_style=Mage::getStoreConfig('socialloginsharing_options/displaysettingshare/yourstylefb');
+            $gp_style=Mage::getStoreConfig('socialloginsharing_options/displaysettingshare/yourstylegp');
+            $li_style=Mage::getStoreConfig('socialloginsharing_options/displaysettingshare/yourstyleli');
+            $tw_style=Mage::getStoreConfig('socialloginsharing_options/displaysettingshare/yourstyletw');
+            $pi_style=Mage::getStoreConfig('socialloginsharing_options/displaysettingshare/yourstylepi');
+            $wa_style=Mage::getStoreConfig('socialloginsharing_options/displaysettingshare/yourstylewa');
+            $su_style=Mage::getStoreConfig('socialloginsharing_options/displaysettingshare/yourstylesu');
+            $rd_style=Mage::getStoreConfig('socialloginsharing_options/displaysettingshare/yourstylerd');
+            $tm_style=Mage::getStoreConfig('socialloginsharing_options/displaysettingshare/yourstyletm');
+            $src_style2='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src=\''.(($fb_style)?$fb_style:'https://www.socleversocial.com/dashboard/img/social_icon/rounded/facebook_square.png').'\'';            
+             $src_style4='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src=\''.(($gp_style)?$gp_style:'https://www.socleversocial.com/dashboard/img/social_icon/rounded/google_plus_square.png').'\'';
+            $src_style7='style=\'width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;\' src=\''.(($li_style)?$li_style:'https://www.socleversocial.com/dashboard/img/social_icon/rounded/linkedin_square.png').'\'';
+            $src_style13='style=\'width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;\' src=\''.(($tw_style)?$tw_style:'https://www.socleversocial.com/dashboard/img/social_icon/rounded/twitter_square.png').'\'';
+            $src_style17='style=\'width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;\' src=\''.(($pi_style)?$pi_style:'https://www.socleversocial.com/dashboard/img/social_icon/rounded/pinterest_square.png').'\'';
+            $src_style18='style=\'width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;'.$mobile_Display.'\' src=\''.(($wa_style)?$wa_style:'https://www.socleversocial.com/dashboard/img/social_icon/rounded/linkedin_square.png').'\'';
+            $src_style19='style=\'width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;\' src=\''.(($su_style)?$su_style:'https://www.socleversocial.com/dashboard/img/social_icon/rounded/stumbleupon_square.png').'\'';
+            $src_style20='style=\'width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;\' src=\''.(($rd_style)?$rd_style:'https://www.socleversocial.com/dashboard/img/social_icon/rounded/reddit_square.png').'\'';
+            $src_style21='style=\'width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;\' src=\''.(($tm_style)?$tm_style:'https://www.socleversocial.com/dashboard/img/social_icon/square/tumblr_square.png').'\'';
+               
+        }
+        else if($button_style=='1')
         {
             $src_style2='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/facebook_square.png"';
             $src_style4='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/google_plus_square.png"';
@@ -106,6 +128,9 @@ if($display_style=='1' || $display_style=='2')
             $src_style13='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/twitter_square.png"';
             $src_style17='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/pinterest_square.png"';
             $src_style18='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;'.$mobile_Display.'" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/whatsapp_square.png"';
+            $src_style19='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/stumbleupon_square.png"';
+            $src_style20='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/reddit_square.png"';
+            $src_style21='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/tumblr_square.png"';
             
         }
         else if($button_style=='2')
@@ -116,6 +141,10 @@ if($display_style=='1' || $display_style=='2')
             $src_style13='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/twitter.png"';
             $src_style17='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/pinterest.png"';
             $src_style18='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;'.$mobile_Display.'" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/whatsapp.png"';
+            $src_style19='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/stumbleupon.png"';
+            $src_style20='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/reddit.png"';
+            $src_style21='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/tumblr.png"';
+            
         }
        else if($button_style=='3')
         {
@@ -125,6 +154,9 @@ if($display_style=='1' || $display_style=='2')
             $src_style13='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/twitter_grey.png"';
             $src_style17='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/pinterest_grey.png"';
             $src_style18='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;'.$mobile_Display.'" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/whatsapp_grey.png"';
+            $src_style19='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/stumbleupon_grey.png"';
+            $src_style20='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/reddit_grey.png"';
+            $src_style21='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/tumblr_grey.png"';
         }
         else if($button_style=='4')
         {
@@ -134,6 +166,9 @@ if($display_style=='1' || $display_style=='2')
             $src_style13='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/twitter_grey_circle.png"';
             $src_style17='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/pinterest_grey_circle.png"';
             $src_style18='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;'.$mobile_Display.'" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/whatsapp_grey_circle.png"';
+            $src_style19='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/stumbleupon_grey_circle.png"';
+            $src_style20='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded/reddit_grey_circle.png"';
+            $src_style21='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/grey_circle/tumblr_grey_circle.png"';
         }
         else if($button_style=='5')
         {
@@ -143,6 +178,9 @@ if($display_style=='1' || $display_style=='2')
             $src_style13='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/flower/twitter_flower.png"';
             $src_style17='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/flower/pinterest_flower.png"';
             $src_style18='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;'.$mobile_Display.'" src="https://www.socleversocial.com/dashboard/img/social_icon/square/whatsapp_square.png"';
+            $src_style19='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/flower/stumbleupon_flower.png"';
+            $src_style20='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/flower/reddit_flower.png"';
+            $src_style21='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/flower/tumblr_flower.png"';
             
         }
         else if($button_style=='6')
@@ -153,6 +191,10 @@ if($display_style=='1' || $display_style=='2')
             $src_style13='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/glossy/twitter_glossy.png"';
             $src_style17='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/glossy/pinterest_glossy.png"';
             $src_style18='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;'.$mobile_Display.'" src="https://www.socleversocial.com/dashboard/img/social_icon/square/whatsapp_square.png"';
+            $src_style19='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/glossy/stumbleupon_glossy.png"';
+            $src_style20='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/glossy/reddit_glossy.png"';
+            $src_style21='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/glossy/tumblr_glossy.png"';
+            
             
         }
          else if($button_style=='7')
@@ -163,6 +205,10 @@ if($display_style=='1' || $display_style=='2')
             $src_style13='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/leaf/twitter_leaf.png"';
             $src_style17='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/leaf/pinterest_leaf.png"';
             $src_style18='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;'.$mobile_Display.'" src="https://www.socleversocial.com/dashboard/img/social_icon/square/whatsapp_square.png"';
+            $src_style19='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/leaf/stumbleupon_leaf.png"';
+            $src_style20='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/leaf/reddit_leaf.png"';
+            $src_style21='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/leaf/tumblr_leaf.png"';
+            
             
         }
          else if($button_style=='8')
@@ -173,6 +219,10 @@ if($display_style=='1' || $display_style=='2')
             $src_style13='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/polygon/twitter_polygon.png"';
             $src_style17='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/polygon/pinterest_polygon.png"';
             $src_style18='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;'.$mobile_Display.'" src="https://www.socleversocial.com/dashboard/img/social_icon/square/whatsapp_square.png"';
+            $src_style19='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/polygon/stumbleupon_polygon.png"';
+            $src_style20='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/polygon/reddit_polygon.png"';
+            $src_style21='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/polygon/tumblr_polygon.png"';
+            
             
         }
         else if($button_style=='9')
@@ -183,6 +233,9 @@ if($display_style=='1' || $display_style=='2')
             $src_style13='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rectangular/twitter_rectangular.png"';
             $src_style17='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rectangular/pinterest_rectangular.png"';
             $src_style18='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;'.$mobile_Display.'" src="https://www.socleversocial.com/dashboard/img/social_icon/square/whatsapp_square.png"';
+            $src_style19='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rectangular/stumbleupon_rectangular.png"';
+            $src_style20='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rectangular/reddit_rectangular.png"';
+            $src_style21='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rectangular/tumblr_rectangular.png"';
             
         }
         else if($button_style=='10')
@@ -193,6 +246,10 @@ if($display_style=='1' || $display_style=='2')
             $src_style13='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded_corners/twitter_rounded_corners.png"';
             $src_style17='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded_corners/pinterest_rounded_corners.png"';
             $src_style18='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;'.$mobile_Display.'" src="https://www.socleversocial.com/dashboard/img/social_icon/square/whatsapp_square.png"';
+            $src_style19='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded_corners/stumbleupon_rounded_corners.png"';
+            $src_style20='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded_corners/reddit_rounded_corners.png"';
+            $src_style21='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/rounded_corners/tumblr_rounded_corners.png"';
+            
             
         }
         else if($button_style=='11')
@@ -203,6 +260,9 @@ if($display_style=='1' || $display_style=='2')
             $src_style13='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/waterdrop/twitter_waterdrop.png"';
             $src_style17='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/waterdrop/pinterest_waterdrop.png"';
             $src_style18='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;'.$mobile_Display.'" src="https://www.socleversocial.com/dashboard/img/social_icon/square/whatsapp_square.png"';
+            $src_style19='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/waterdrop/stumbleupon_waterdrop.png"';
+            $src_style20='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/waterdrop/reddit_waterdrop.png"';
+            $src_style21='style="width:'.$iwidth[0].'px;height:'.$iwidth[0].'px;cursor:pointer;" src="https://www.socleversocial.com/dashboard/img/social_icon/waterdrop/tumblr_waterdrop.png"';
          }
         if($display_style=='1')
         {
@@ -218,33 +278,7 @@ if($display_style=='1' || $display_style=='2')
          //$url=$this->helper('core/url')->getCurrentUrl();
          
          
-         $fburl=$url.(parse_url($url, PHP_URL_QUERY) ? '&' : '?').'scsource=1';
-         $liurl=$url.(parse_url($url, PHP_URL_QUERY) ? '&' : '?').'scsource=2';
-         $gpurl=$url.(parse_url($url, PHP_URL_QUERY) ? '&' : '?').'scsource=3';
-         $twurl=$url.(parse_url($url, PHP_URL_QUERY) ? '&' : '?').'scsource=4';
          
-         $fb=json_decode(file_get_contents("http://graph.facebook.com/?ids=".$url.",".$fburl.""));
-         $tw=json_decode(file_get_contents("http://cdn.api.twitter.com/1/urls/count.json?url=".$url.""));
-         $tw2=json_decode(file_get_contents("http://cdn.api.twitter.com/1/urls/count.json?url=".$twurl.""));
-         $li=json_decode(file_get_contents("http://www.linkedin.com/countserv/count/share?url=".$url."&format=json"));
-         $li2=json_decode(file_get_contents("http://www.linkedin.com/countserv/count/share?url=".$liurl."&format=json"));         
-         $pin_count=file_get_contents("http://api.pinterest.com/v1/urls/count.json?url=".$url."");
-         
-         $whatsapp_count=file_get_contents("https://www.socleversocial.com/dashboard/whatsappcount.php?site_id=".Mage::getStoreConfig('socialloginsharing_options/apisettings/scsl_siteid')."&url=".$url."");
-         $str=substr(substr($pin_count,0,-1),13);
-         $pin_arr=json_decode($str);
-        
-         
-         $fb=json_decode(file_get_contents("http://graph.facebook.com/?id=".$url.""));
-         $tw=json_decode(file_get_contents("http://cdn.api.twitter.com/1/urls/count.json?url=".$url.""));
-         $li=json_decode(file_get_contents("http://www.linkedin.com/countserv/count/share?url=".$url."&format=json"));         
-         $pin_count=file_get_contents("http://api.pinterest.com/v1/urls/count.json?url=".$url."");
-
-         $str=substr(substr($pin_count,0,-1),13);
-         $pin_arr=json_decode($str);
-        
-	
-      $fb_shares="FB Shares=".$fb->shares."==Googleplus==".$count."==Twitter=".$tw->count."===Linked==".$li->count."==Pinterest==".$pin_arr->count;
       $counter_top_margin='';
     if($counter_type=='0')
     {
@@ -252,21 +286,31 @@ if($display_style=='1' || $display_style=='2')
      }   
     
     $comon_counter_end='</div></div>';
-    $count2=$count4=$count7=$count13=$count17="";
-    $count2r=$count2=''.$comon_counter_start.''.intval($fb->$url->shares+$fb->$fburl->shares).''.$comon_counter_end.'';
-    $count4r=$count4=''.$comon_counter_start.''.intval(cs_get_plusones($url)+cs_get_plusones($gpurl)).''.$comon_counter_end.'';
-    $count7r=$count7=''.$comon_counter_start.''.intval($tw->count+$tw2->count).''.$comon_counter_end.'';
-    $count13r=$count13=''.$comon_counter_start.''.intval($li->count+$li2->count).''.$comon_counter_end.'';
-    $count17r=$count17=''.$comon_counter_start.''.intval($pin_arr->count).''.$comon_counter_end.'';
-    $count18r=$count18=''.$comon_counter_start_18.''.intval($whatsapp_count).''.$comon_counter_end.'';
+    
+    
+    $other_count=file_get_contents("https://www.socleversocial.com/dashboard/get_other_counts.php?site_id=".Mage::getStoreConfig('socialloginsharing_options/apisettings/scsl_siteid')."&url=".$url."");
+    $row_count=explode("~",$other_count);
+    $comon_counter_end='</div></div>';
+    $count2=$count4=$count7=$count13=$count17=$count18=$count19=$count20=$count21="";
+    $count2r=$count2=''.$comon_counter_start.''.intval($row_count[4]).''.$comon_counter_end.'';
+    $count4r=$count4=''.$comon_counter_start.''.intval($row_count[6]).''.$comon_counter_end.'';
+    $count7r=$count7=''.$comon_counter_start.''.intval($row_count[5]).''.$comon_counter_end.'';
+    $count13r=$count13=''.$comon_counter_start.''.intval($row_count[7]).''.$comon_counter_end.'';
+    $count17r=$count17=''.$comon_counter_start.''.intval($row_count[8]).''.$comon_counter_end.'';
+    $count18r=$count18=''.$comon_counter_start_18.''.intval($row_count[0]).''.$comon_counter_end.'';
+    $count19r=$count19=''.$comon_counter_start.''.intval($row_count[1]).''.$comon_counter_end.'';
+    $count20r=$count20=''.$comon_counter_start.''.intval($row_count[2]).''.$comon_counter_end.'';
+    $count21r=$count21=''.$comon_counter_start.''.intval($row_count[3]).''.$comon_counter_end.'';
+    
+    
     }
     if($counter_type=='0')
     {
-        $count2=$count4=$count7=$count13=$count17=$count18="";
+        $count2=$count4=$count7=$count13=$count17=$count18=$count19=$count20=$count21="";
     } 
     else
     {
-        $count2r=$count4r=$count7r=$count13r=$count17r=$count18r="";
+        $count2r=$count4r=$count7r=$count13r=$count17r=$count18r=$count19r=$count20r=$count21r="";
     }   
     
     if($customer = Mage::getSingleton('customer/session')->isLoggedIn()) {
@@ -284,6 +328,9 @@ if($display_style=='1' || $display_style=='2')
     $share_arr[13]='<div style=\'float:left;\'>'.$count13.'<img  '.$src_style13.' onclick="share_on_cs(\'4\',\''.$user_ID.'\');window.open(\'http://twitter.com/share?url='.urlencode(cs_format_share_url($url,'4')).'&text='.urlencode($title).'\',\'_new\');"  alt="Share on Twitter"></div>'.$count13r.''.$gap_string.'';
     $share_arr[17]='<div style=\'float:left;\'>'.$count17.'<img  '.$src_style17.' onclick="share_on_cs(\'5\',\''.$user_ID.'\');"   alt="Pin It"></div>'.$count17r.''.$gap_string.'';
     $share_arr[18]='<div style=\'float:left;\'>'.$count18.'<img  '.$src_style18.' onclick="share_on_cs(\'6\',\''.$user_ID.'\');"   alt="Share on Whatsapp"></div>'.$count18r.''.$gap_string.'';
+    $share_arr[19]='<div style=\'float:left;\'>'.$count19.'<img  '.$src_style19.' onclick="share_on_cs(\'7\',\''.$user_ID.'\');window.open(\'http://www.stumbleupon.com/submit?url='.urlencode(cs_format_share_url($url,'7')).'&title='.urlencode($title).'\',\'_new\');""   alt="Share on StumbleUpon"></div>'.$count19r.''.$gap_string.'';
+    $share_arr[20]='<div style=\'float:left;\'>'.$count20.'<img  '.$src_style20.' onclick="share_on_cs(\'8\',\''.$user_ID.'\');window.open(\'http://www.reddit.com/submit?url='.urlencode(cs_format_share_url($url,'8')).'&title='.urlencode($title).'\',\'_new\');""   alt="Share on Reddit"></div>'.$count20r.''.$gap_string.'';
+    $share_arr[21]='<div style=\'float:left;\'>'.$count21.'<img  '.$src_style21.' onclick="share_on_cs(\'9\',\''.$user_ID.'\');window.open(\'http://www.tumblr.com/share/link?url='.urlencode(cs_format_share_url($url,'9')).'&name='.urlencode($title).'\',\'_new\');""   alt="Pin It"></div>'.$count21r.''.$gap_string.'';
 
     
     $start_div='<div id="scssdiv" style="clear:both;wdth:100%;height:100%;display:inline-block;z-index:999;">';

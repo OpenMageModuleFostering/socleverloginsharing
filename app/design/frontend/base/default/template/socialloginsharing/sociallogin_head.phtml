@@ -4,7 +4,7 @@ if($is_validated=='1')
 {
 if(!Mage::getSingleton('customer/session')->isLoggedIn())
 {
-echo'<script type="text/javascript" src="https://www.socleversocial.com/dashboard/client_share_js/client_'.Mage::getStoreConfig('socialloginsharing_options/apisettings/scsl_siteid').'_login.js"></script>'.PHP_EOL.
+echo'<script type="text/javascript" src="https://www.socleversocial.com/dashboard/client_share_js/client_'.Mage::getStoreConfig('socialloginsharing_options/apisettings/scsl_siteid').'_combinelogin.js"></script>'.PHP_EOL.
            '<script type="text/javascript">'.PHP_EOL.
            'csloginjs.init([\''.Mage::getStoreConfig('socialloginsharing_options/apisettings/scsl_appid').'\', \''.Mage::getStoreConfig('socialloginsharing_options/apisettings/scsl_siteid').'\',\''.Mage::getStoreConfig('socialloginsharing_options/apisettings/scsl_appsecret').'\',\''.Mage::getStoreConfig('socialloginsharing_options/apisettings/scsl_validdomain').'\']);'.PHP_EOL.
            'csloginjs.validateCsApi();'.PHP_EOL.          

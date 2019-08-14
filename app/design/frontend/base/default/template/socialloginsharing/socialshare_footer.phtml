@@ -1,0 +1,14 @@
+<?php
+
+if(!Mage::getStoreConfig('advanced/modules_disable_output/Soclever_Socialsharesc') &&  !Mage::getStoreConfig('advanced/modules_disable_output/Soclever_Socialloginsc'))
+{
+
+    Mage::getModel('core/config')->saveConfig('socialloginsharing_options/apisettings/scsl_footer_added',"1");
+$footer_code='<script type="text/javascript">var sid=\''.Mage::getStoreConfig('socialloginsharing_options/apisettings/scsl_siteid').'\';(function()
+                                                    { var u=((\'https:\'==document.location.protocol)?\'http://\':\'http://\')+\'s3.socleversocial.com/\'; var su=u;var s=document.createElement(\'script\'); s.type=\'text/javascript\'; s.defer=true; s.async=true; s.src=su+\'scs.js\'; var p=document.getElementsByTagName(\'script\')[0]; p.parentNode.insertBefore(s,p); }
+                                                    )(); 
+                                           </script>'.PHP_EOL;
+               
+echo $footer_code;
+}
+?>

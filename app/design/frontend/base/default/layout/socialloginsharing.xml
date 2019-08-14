@@ -7,6 +7,11 @@
          <block type="socialloginsharing/scsshead" name="socialshare_head" template="socialloginsharing/socialshare_head.phtml" />                             
          </reference>                  
     </default>
+<default>
+	 	<reference name="before_body_end">
+            <block type="socialloginsharing/scssfooter" name="socialshare_footer" template="socialloginsharing/socialshare_footer.phtml" />
+        </reference>        
+	</default>
     <catalog_product_view>
         <reference name="product.info.extrahint">
             <block type="socialloginsharing/scsshow" name="socialshare_product" template="socialloginsharing/socialshare_product.phtml"  />

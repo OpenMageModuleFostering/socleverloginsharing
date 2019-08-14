@@ -24,7 +24,10 @@ class Soclever_Socialloginsharing_Model_Providers
             array('value'=>7, 'label'=>'LinkedIN'),            
             array('value'=>13, 'label'=>'Twitter'),
             array('value'=>17, 'label'=>'Pinterest'),
-            array('value'=>18, 'label'=>'Whatsapp'),                       
+            array('value'=>18, 'label'=>'Whatsapp'),  
+            array('value'=>19, 'label'=>'Stumbleupon'),
+            array('value'=>20, 'label'=>'Reddit'),
+            array('value'=>21, 'label'=>'Tumblr'),                      
         );
         /*$providers=array("2"=>"Facebook","4"=>"Google+","7"=>"LinkedIN","13"=>"Twitter","17"=>"Pinterest");
         return $providers;*/
@@ -36,7 +39,7 @@ class Soclever_Socialloginsharing_Model_Providers
             array('value'=>2, 'label'=>'Facebook'),
             array('value'=>4, 'label'=>'Google+'),
             array('value'=>7, 'label'=>'LinkedIN'),            
-            array('value'=>13, 'label'=>'Yahoo!'),
+            array('value'=>15, 'label'=>'Yahoo!'),
             array('value'=>16, 'label'=>'Paypal'),
             array('value'=>8, 'label'=>'Microsoft'),                       
         );
@@ -82,7 +85,7 @@ class Soclever_Socialloginsharing_Model_Providers
     {
         $yourstyle=array();
         $yourstyle=array("2"=>'Rounded Corner',"3"=>'Transparent Grey',"4"=>'Rounded Black',"5"=>'Flower',
-                        "6"=>'Glossy',"7"=>'Leaf',"8"=>'Polygon',"10"=>'Rectangular',"11"=>'Waterdrop');
+                        "6"=>'Glossy',"7"=>'Leaf',"8"=>'Polygon',"10"=>'Rectangular',"11"=>'Waterdrop',"custom"=>'Custom');
         return $yourstyle;
         
     }
@@ -91,6 +94,13 @@ class Soclever_Socialloginsharing_Model_Providers
         $sharewithautho=array();
         $sharewithautho=array("0"=>"No","1"=>"Yes");
         return $sharewithautho;
+        
+    }
+    public function showpoweredby()
+    {
+        $showpoweredby=array();
+        $showpoweredby=array("1"=>"Yes","0"=>"No");
+        return $showpoweredby;
         
     }
     public function getpreview()

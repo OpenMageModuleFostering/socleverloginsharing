@@ -28,6 +28,7 @@ if(isset($_GET['lc']) && $_GET['lc']!='')
    
    if($get_fb!='0')
    {
+    
     $app_arr=explode("~",$get_fb);
    $app_id = $app_arr[0];
    $my_url="".Mage::getBaseUrl()."soclever_socialloginsharing/index/fblogin";
@@ -125,6 +126,14 @@ $customer = Mage::getModel("customer/customer");
   Mage::getModel('core/session', array('name' => 'frontend'));
   $customer->setWebsiteId(Mage::app()->getWebsite()->getId());
   $customer->loadByEmail($username);
+  $customer->setCustomerActivated(true);
+  $customer->setData('password',$password);
+  $customer->save();              
+ if($is_new=='1' && Mage::getStoreConfig('socialloginsharing_options/displaysettings/socialloginregemail')=='1')
+  {
+    $customer->sendNewAccountEmail();
+     
+  }
 
   $redirect_location=($_COOKIE['lc']=='c')?Mage::getBaseUrl()."checkout/onepage/":Mage::getBaseUrl()."customer/account/";
   if(isset($_COOKIE['lch']) && $_COOKIE['lch']!='')
@@ -231,6 +240,16 @@ $customer = Mage::getModel("customer/customer");
   Mage::getModel('core/session', array('name' => 'frontend'));
   $customer->setWebsiteId(Mage::app()->getWebsite()->getId());
   $customer->loadByEmail($username);
+  $customer->setCustomerActivated(true);
+  $customer->setData('password',$password);
+  $customer->save();             
+  if($is_new=='1' && Mage::getStoreConfig('socialloginsharing_options/displaysettings/socialloginregemail')=='1')
+  {
+    $customer->sendNewAccountEmail();
+     
+  }
+ 
+ 
   $redirect_location=($_GET['lc']=='c')?Mage::getBaseUrl()."checkout/onepage/":Mage::getBaseUrl()."customer/account/";
   $is_from='7';
   Mage::getSingleton('core/session')->setSessionVariable($is_from);
@@ -419,7 +438,16 @@ $customer = Mage::getModel("customer/customer");
   
   Mage::getModel('core/session', array('name' => 'frontend'));
   $customer->setWebsiteId(Mage::app()->getWebsite()->getId());
-  $customer->loadByEmail($username);  
+  $customer->loadByEmail($username);
+  $customer->setCustomerActivated(true);
+  $customer->setData('password',$password);
+  $customer->save();              
+   if($is_new=='1' && Mage::getStoreConfig('socialloginsharing_options/displaysettings/socialloginregemail')=='1')
+  {
+    $customer->sendNewAccountEmail();
+     
+  }
+
   $this->getSession()->loginById($customer->getId());
   
   if(Mage::getSingleton('customer/session')->isLoggedIn())

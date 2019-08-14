@@ -22,7 +22,8 @@
 <default>
         <socialloginsharing_options>
             <displaysettings>
-                <buttonstyle>ic</buttonstyle>                
+                <buttonstyle>ic</buttonstyle>
+                <socialloginboxcaption>Login With:</socialloginboxcaption>                
             </displaysettings>
         </socialloginsharing_options>
     </default>
