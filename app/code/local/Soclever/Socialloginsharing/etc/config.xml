@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Soclever SocialLoginsharing Extension
+ *
+ * @category     Extension
+ * @copyright    Copyright (c) 2014 Soclever (https://www.socleversocial.com)
+ * @author       Socleverteam
+ * @license      GPL
+ * @terms of use https://www.socleversocial.com
+ * @version      Release: 1.0
+ * @since        Available since Release 1.0
+ */ 
+ -->
+
+<config>
+<modules>
+        <Soclever_Socialloginsharing>
+            <version>1.1.1</version>
+        </Soclever_Socialloginsharing>
+    </modules>
+<default>
+        <socialloginsharing_options>
+            <displaysettings>
+                <buttonstyle>ic</buttonstyle>                
+            </displaysettings>
+        </socialloginsharing_options>
+    </default>
+	
+    <frontend>
+        <routers>
+<soclever_socialloginsharing>
+				<use>standard</use>
+				<args>
+					<module>Soclever_Socialloginsharing</module>
+					<frontName>soclever_socialloginsharing</frontName>
+				</args>
+			</soclever_socialloginsharing>
+
+        </routers>
+        <layout>
+            <updates>
+                <Soclever_Socialloginsharing>
+                    <file>socialloginsharing.xml</file>
+                </Soclever_Socialloginsharing>
+            </updates>
+        </layout>
+    </frontend>
+	<admin>
+        <routers>
+			<socialloginsharing>
+				<use>admin</use>
+				<args>
+					<module>Soclever_Socialloginsharing</module>
+					<frontName>Socialloginsharing admin</frontName>
+				</args>
+			</socialloginsharing>
+        </routers>
+    </admin>
+	<adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <socialloginsharing_options>
+                                            <title>Store Social Login Sharing Module Section</title>
+                                        </socialloginsharing_options>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>   
+	<global>
+		<models>
+            <socialloginsharing>
+                <class>Soclever_Socialloginsharing_Model</class>
+            </socialloginsharing>
+        </models>
+        <resources>
+			<soclever_socialloginsharing_setup>
+				<setup>
+					<module>Soclever_Socialloginsharing</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</soclever_socialloginsharing_setup>
+			<soclever_socialloginsharing_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</soclever_socialloginsharing_write>
+			<soclever_socialloginsharing_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</soclever_socialloginsharing_read>
+		</resources>
+        <blocks>
+			<socialloginsharing>
+				<class>Soclever_Socialloginsharing_Block</class>
+			</socialloginsharing>
+		</blocks>
+		<helpers>
+			<socialloginsharing>
+				<class>Soclever_Socialloginsharing_Helper</class>
+			</socialloginsharing>
+		</helpers>
+        <events>        
+    <admin_system_config_changed_section_socialloginsharing_options>   
+    <observers>
+    <myobserver>
+        <type>singleton</type>
+        <class>socialloginsharing/observer</class>
+        <method>writejs</method> 
+    </myobserver>
+    </observers>
+</admin_system_config_changed_section_socialloginsharing_options>
+</events>
+	</global>    
+</config>

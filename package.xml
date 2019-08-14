@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<package>
+    <name>socleverloginsharing</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>This module enables Social Login (Facebook and more) social sharing with detail User Profile Data &amp; Social Analytics on your site</summary>
+    <description>&lt;p&gt;SoClevers provides FREE social login tools to help increase conversions, registration rates, increase comments by allowing easier registrations. Our Plugin works with Facebook, Google+ LinkedIn, PayPal, Yahoo! &amp; Instagram. Our JavaScript is asynchronous ensuring fast load time, and it is also dynamic so you can A-B test from our dashboard without needing to re-code.&lt;/p&gt;&#xD;
+&lt;p&gt;SoClever social sharing use Industry leading Asynchronous JavaScript for fasted load speed, not affecting site speed what so ever.&lt;/p&gt;&#xD;
+&lt;p&gt;Customizable designs, size, position and shape. Select ours or load your own logo designs.&lt;/p&gt;&#xD;
+&lt;p&gt;Our social login icons are 100% customizable, size, shape and colour. Select ours or load your own logo icon designs.  &#xD;
+&lt;/p&gt;&#xD;
+&lt;p&gt;You'll need a SoClever API to use it. API Keys are free; paid subscriptions are available for advanced reporting, analytics and demographic data. Download now, no lock in contracts or credit card required.&lt;/p&gt;&#xD;
+&lt;p&gt;Thanks for choosing our plugin, feel free to leave a review or contact us for any feedback. If you want to know more about the features we offer, keep reading below.&lt;/p&gt;&#xD;
+&lt;h3&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/h3&gt;&#xD;
+&lt;p&gt;&lt;strong&gt;Social Login&lt;/strong&gt;&lt;br /&gt;&#xD;
+  Eliminate registration forms and let your customer / visitors sign-up in few seconds using trusted IDs like Facebook, Twitter, Google, Yahoo, and more. Increase your sign-up rates and start building a loyal customer list today.&lt;/p&gt;&#xD;
+&lt;p&gt;&lt;strong&gt;Social Sharing&lt;/strong&gt;&lt;br /&gt;&#xD;
+  Allow users to share your pages to famous social networks and get free traffic from social networks.&lt;/p&gt;&#xD;
+&lt;p&gt;&lt;strong&gt;Track Revenue&lt;/strong&gt;&lt;br /&gt;&#xD;
+  Have an e-commerce site? Track revenue per social user, download customer segments to personalise your marketing messages.  &lt;/p&gt;&#xD;
+&lt;p&gt;&lt;strong&gt;Top Facebook likes&lt;/strong&gt;&lt;br /&gt;&#xD;
+  Download our reports on top Facebook Liked pages of your customers/visitors, filter to add top revenue customers and their top likes. Quick CSV upload of this data to Facebook, you can create a new and more targeted advertising campaigns. &lt;/p&gt;&#xD;
+&lt;p&gt;&lt;strong&gt;User Profile Data &amp;amp; Social Analytics&lt;/strong&gt;&lt;br /&gt;&#xD;
+  Build a rich profile of your customers with our unique reporting dashboard. Get access to full name, email address, DOB, gender, relationship status, home town, place of birth, like, interests and much more with SoClever&#x2019;s social login.&lt;/p&gt;&#xD;
+&lt;p&gt;&lt;strong&gt;Birthday Reports&lt;/strong&gt;&lt;br /&gt;&#xD;
+Send personalised message to your visitors by using our birthday reports. &lt;/p&gt;&#xD;
+&lt;p&gt;&lt;strong&gt;Dynamic JavaScript&lt;/strong&gt;&lt;br /&gt;&#xD;
+Our asynchronous javascript loads faster without interfearing with the display or behaviour of the page. Dynamic JavaScript makes it easy to choose/sort social netork buttons for display.&lt;/p&gt;</description>
+    <notes>Released Stable Version 1.0.0</notes>
+    <authors><author><name>Soclever Social</name><user>Socleversocial</user><email>hemang@socleversocial.com</email></author></authors>
+    <date>2015-02-21</date>
+    <time>13:56:01</time>
+    <contents><target name="magelocal"><dir name="Soclever"><dir name="Socialloginsharing"><dir name="Model"><file name="Observer.php" hash="475751edc201b924a7d0f78eb34032f0"/><file name="Providers.php" hash="9839bd2b133cd6d788e312c7262711db"/></dir><dir name="Block"><file name="Scslhead.php" hash="219920fc652715e4383509b0ceedf82f"/><file name="Scslshow.php" hash="e979ec3119f18b8d0b8a2dc38b2d0341"/><file name="Scsltrackpixel.php" hash="dcb7add6ba6acd6cfd8080b40d2b0e24"/><file name="Scslheadfb.php" hash="4298e17782026f4003694ebcb1149376"/><file name="Scsshead.php" hash="173c515d7a83f8b42cd00d38bcd47a5e"/><file name="Scsshow.php" hash="392625a6c38bec962120fa40f0cf68ed"/></dir><dir name="controllers"><file name="IndexController.php" hash="8018f017f178bb4968268de4a74d7295"/><file name="openid.php" hash="421d5936957b8ddda543b679d1876f04"/></dir><dir name="etc"><file name="config.xml" hash="16f95dbbf39e055bacc289de3de754db"/><file name="system.xml" hash="11714ec8859aacefc045caf1410eecff"/></dir><dir name="Helper"><file name="Data.php" hash="035a7f9b50f1e92c9955e427d4e7a73e"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="socialloginsharing.xml" hash="4d3f31232917e026cc92b3dabaa5ac61"/></dir><dir name="template"><dir name="socialloginsharing"><file name="scsl_buttons.phtml" hash="cc15fbe26dfb2a0d54b3768c613a10c9"/><file name="sociallogin_fb.phtml" hash="718d8596a14d123d83afb0d5d6d6fd96"/><file name="sociallogin_head.phtml" hash="b184204ebae539cabc3f1d5bac63bd62"/><file name="sociallogin_trackpixel.phtml" hash="542ceb3ba7d5314f2f9aad416636d349"/><file name="socialshare_head.phtml" hash="f35a4bdaad57d1731be186f9e0ac612e"/><file name="socialshare_product.phtml" hash="2fbb95766a1675e69ef2b1f60db0457e"/><file name="socialshare_show.phtml" hash="0587dfce9e8c9a8049201e00ea7699b0"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="soclever_socialloginsharing.xml" hash="17a99813f44f3aa85a4781558133ac5c"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

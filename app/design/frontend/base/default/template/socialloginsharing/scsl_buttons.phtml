@@ -1,0 +1,36 @@
+<?php
+$site_id=Mage::getStoreConfig('socialloginsharing_options/apisettings/scsl_siteid');
+$api_secret=Mage::getStoreConfig('socialloginsharing_options/apisettings/scsl_appsecret');
+$api_key=Mage::getStoreConfig('socialloginsharing_options/apisettings/scsl_appid');  
+$btn_style=Mage::getStoreConfig('socialloginsharing_options/displaysettings/buttonstyle');
+$button_size=Mage::getStoreConfig('socialloginsharing_options/displaysettings/buttonsize');
+
+$is_validated=Mage::getStoreConfig('socialloginsharing_options/apisettings/scsl_validated');
+
+$selected_providers=Mage::getStoreConfig('socialloginsharing_options/displaysettings/socialloginproviders');
+
+          if($is_validated=='1' && $selected_providers!='' && $selected_providers!='0')
+          {
+            
+          $valid_data=file_get_contents("https://www.socleversocial.com/dashboard/mage_login_buttons.php?site_id=".$site_id."&api_key=".$api_key."&api_secret=".$api_secret."&csplatform=magentologin&rt=gp&bstyle=".$btn_style."&bsize=".$button_size."&providers=".$selected_providers);
+          
+          if($valid_data && $valid_data!='0~~0')
+          {
+            echo $valid_data;
+          }
+         else
+         {
+           echo"";
+         }
+         }
+         echo"";
+ 
+ 
+            
+        
+        
+        
+    
+
+
+?>

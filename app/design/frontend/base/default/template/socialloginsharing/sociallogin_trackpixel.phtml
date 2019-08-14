@@ -1,0 +1,11 @@
+<?php
+$is_validated=Mage::getStoreConfig('socialloginsharing_options/apisettings/scsl_validated');
+if($is_validated=='1')
+{
+$CsorderId = Mage::getSingleton('checkout/session')->getLastRealOrderId();
+$Csorder = Mage::getModel('sales/order')->loadByIncrementId($CsorderId);
+$sessionVariable = Mage::getSingleton('core/session')->getSessionVariable();
+echo"<img src='https://www.socleversocial.com/dashboard/trackPixel.php?site_id=".Mage::getStoreConfig('socialloginsharing_options/apisettings/scsl_siteid')."&order_id=".$CsorderId."&ord_amt=".$Csorder->getGrandTotal()."&ord_cur=".$Csorder->base_currency_code."&siteUid=".$Csorder->customer_id."&is_from=".$sessionVariable."' />";
+}
+
+?>
