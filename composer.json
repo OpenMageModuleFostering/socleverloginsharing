@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/socleverloginsharing",
+    "name": "openmage-module-fostering\/socleverloginsharing",
     "type": "magento-module",
-    "license": "OSL",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "This module enables Social Login (Facebook and more) social sharing with detail User Profile Data & Social Analytics on your site",
     "authors": [
